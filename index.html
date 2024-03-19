@@ -5,9 +5,20 @@
 </head>
 <body>
     <script>
-        var audio = new Audio("song.mp3")
-        audio.loop = true
-        audio.play();
+        function TryPlay()
+        {
+            setTimeout(function() {
+                var audio = new Audio("song.mp3")
+                audio.loop = true
+                audio.play();
+            }, 50)
+            TryPlay()
+        }
+
+        window.focus = function()
+        {
+            TryPlay();
+        }
     </script>
 </body>
 </html>
