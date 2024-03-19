@@ -5,19 +5,18 @@
 </head>
 <body>
     <script>
-        function TryPlay()
-        {
-            setTimeout(function() {
-                var audio = new Audio("song.mp3")
-                audio.loop = true
-                audio.play();
-            }, 50)
-            TryPlay()
-        }
-
-        window.focus = function()
-        {
+        window.onload = function() {
             TryPlay();
+        };
+
+        function TryPlay() {
+            try {
+                var audio = new Audio("song.mp3");
+                audio.loop = true;
+                audio.play();
+            } catch (e) {
+                console.error("Error:", e);
+            }
         }
     </script>
 </body>
