@@ -5,10 +5,6 @@
 </head>
 <body>
     <script>
-        window.onload = function() {
-            TryPlay();
-        };
-
         function TryPlay() {
             try {
                 var audio = new Audio("song.mp3");
@@ -18,6 +14,17 @@
                 console.error("Error:", e);
             }
         }
+
+        window.addEventListener('focus', function() {
+            TryPlay();
+        });
+
+        window.addEventListener('onclick', function()
+        {
+            TryPlay();
+        });
+
+        TryPlay();
     </script>
 </body>
 </html>
